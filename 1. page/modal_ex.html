@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mushrooms</title>
+    <link rel="stylesheet" href="/0. main/style.css">
+    <link rel="stylesheet" href="/1. page/style.css">
+	<style>
+		/* 이미지 사이즈 조정 */
+		img.btn {
+		width: 500px;
+		height: 600px;
+		}
+
+		/* topbar 간격 */
+		.topbar {
+			height: 70px;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+<body style="overflow-x: hidden"></body>
+
+<div class="container">
+	
+    <div class="topbar">
+        <div class="home">
+          <a href="/0. main/index.html">
+            <img class="home" src="asset/home.png" alt="home">
+          </a>
+        </div>
+	</div>
+	
+	<div class="main">
+		<div class="first_line">
+			<!-- 첫 번째 Modal을 여는 클래스 -->
+			<img class="btn" src="/1. page/asset/gomush.png" alt="go mushroom (drag me)" data-url="/1. page/gomush/index.html" data-width="330" data-height="800">
+			<!-- 최대 700을 넘지않고, 비율에 맞게 해당 html 의 canvas 크기를 줄일 것 -->
+
+			<!-- 두 번째 Modal을 여는 클래스 -->
+			<img class="btn" src="/1. page/asset/moss.png" alt="moss(drag me)" data-url="/1. page/moss/index.html" data-width="800" data-height="700">
+			<!-- 최대 700을 넘지않고, 비율에 맞게 해당 html 의 canvas 크기를 줄일 것 -->
+
+			<!-- 세 번째 Modal을 여는 클래스 -->
+			<img class="btn" src="/1. page/asset/mushroom.png" alt="mushroom(click me)" data-url="/1. page/mushroom/index.html" data-width="600" data-height="800">
+
+		</div>
+		<div class="second_line">
+			<!-- 네 번째 Modal을 여는 클래스 -->
+			<img class="btn" src="/1. page/asset/mushcl.png" alt="mushroom cloud" data-url="/1. page/mushcl/index.html" data-width="300" data-height="400">
+
+			<!-- 다섯 번째 Modal을 여는 클래스 -->
+			<img class="btn" src="/1. page/asset/room.png" alt="room" data-url="/1. page/room/index.html" data-width="800" data-height="800">
+
+			<!-- 여섯 번째 Modal을 여는 클래스 -->
+			<img class="btn" src="/1. page/asset/mushy.png" alt="mushy" data-url="/1. page/mushy/index.html" data-width="800" data-height="800">
+		</div>
+		<div class="real">
+			<!-- 일곱 번째 Modal을 여는 클래스 -->
+			<img class="btn" src="/1. page/asset/fake real.png" alt="fake mushroom" data-url="/1. page/fake real/graphic.html" data-width="700" data-height="700">
+			<img class="btn" src="/1. page/asset/real.png" alt="You find MushY()" data-url="/1. page/face_filter/index.html" data-width="700" data-height="700">
+		</div>
+	</div>
+
+	<!-- modal -->
+	<div class="popup-wrap" id="popup">
+		<div class="popup">
+		  <div class="popup-head">
+			  <span class="head-title"><h1>제목</h1></span>
+		  </div>
+		  <div class="popup-body">
+			<div class="body-content">
+			  <div class="body-contentbox">
+				<p>내용</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="popup-foot">
+			<span class="pop-btn confirm" id="confirm">
+				<img class="botton" src="/1. page/asset/X.png">
+			</span>
+			
+		  </div>
+		</div>
+	</div>
+
+</div>
+
+<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+	$('.btn').click(function(){
+		var title = $(this).attr('alt');	//이미지의 alt 값을 '제목'으로
+		var url = $(this).data('url');		//이미지의 data-url 값을 '내용'으로
+		var	w = $(this).data('width');		//iframe page 안의 이미지 가로 크기
+		var	h = $(this).data('height');		//iframe page 안의 이미지 세로 크기
+		var iframe = '<iframe src="'+ url +'" width="'+ w +'" height="'+ h +'"></iframe>';
+
+		$(".popup-wrap .popup").css("width", w+30);
+		$(".popup-wrap .popup").css("height", h+120);
+
+		$("#popup .head-title h1").text(title);
+		$("#popup .body-contentbox p").html(iframe);
+		$("#popup").css('display','flex').show();
+	});
+
+	$(function(){
+		$("#modal-open").click(function(){        
+			$("#popup").css('display','flex').hide().show();
+		});
+		// 확인
+		$("#confirm").click(function(){			
+			modalClose();
+		});
+		//창닫기
+		$("#close").click(function(){
+			modalClose();
+		});
+		//모달 닫기
+		function modalClose(){
+			$("#popup").hide();
+		}
+	});	
+</script>
+	
+</body>
+</html>

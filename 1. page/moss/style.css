@@ -1,0 +1,10 @@
+body {
+  background-image: url('배경.jpg');
+  width: 800px;
+  height: 800px;
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}

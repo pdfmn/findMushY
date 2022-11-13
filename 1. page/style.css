@@ -1,0 +1,106 @@
+
+.btn {
+	cursor: pointer;
+	padding: 100px;
+  }
+  
+  .popup-wrap {
+	margin: 0;
+	/* background-color:rgba(0,0,0,.3);  */
+	justify-content:center;
+	align-items:center;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	display:none;
+	padding:50px;
+  }
+  .popup-wrap .popup{
+	width: 800px;		/* 모달창 가로 크기 */
+	height: 800px;
+	border-radius:5px;
+	overflow:hidden;
+	background-color:#ffffff;
+	/* box-shadow: 5px 5px 5px 5px rgba(255, 0, 0, 0.3);  */
+	border: #ff0000;
+	line-height: 3px;
+  }
+  .popup-wrap .popup-head{
+	width:100%;
+	height:30px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color: #ff0000;
+	font-weight: bold;
+  }
+  .popup-wrap .popup-body{
+	width:100%;
+	background-color:#ffffff;
+  }
+  .popup-wrap .body-content{
+	padding:5px;
+  }
+  .popup-wrap .body-titlebox{
+	text-align:center;
+	width:100%;
+	height:20px;
+	margin-bottom:10px;
+  }
+  .popup-wrap .body-titlebox h1{
+	margin: 0;
+	padding: 0;
+  }
+  .popup-wrap .body-contentbox{
+	position: relative;
+	margin: 0 auto;
+  }
+  .popup-wrap .body-contentbox p iframe{
+	display: block;
+	margin: 0 auto;
+  }
+  .popup-wrap .popup-foot{
+	width:200%;
+	height:50px;
+  }
+  .popup-wrap .pop-btn{
+	display:inline-flex;
+	width:50%;
+	height:100%;
+	justify-content:center;
+	align-items:center;
+	float:left;
+	color:#ff0000;
+	cursor:pointer;
+  }
+
+  .botton {
+	height: 40px;
+  }
+
+  .main {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+  }
+
+  .first_line {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  }
+
+  .second_line {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  }
+
+  .real {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  }
